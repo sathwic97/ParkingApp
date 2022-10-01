@@ -2,7 +2,22 @@
     text-align: center;
 }
 
-.garageData {
+body {
+    background-position: center;
+    background-size: cover;
+}
+
+h1 {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: steelblue;
+    text-shadow: 5px 5px 8px rgb(228, 87, 115);
+}
+
+.App,
+.garageData,
+.entries {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,4 +28,98 @@
     display: inline-block;
     width: 150px;
     text-align: center;
+    padding: 10px;
+}
+
+.entries {
+    margin-top: 25px;
+    margin-bottom: 45px;
+    box-shadow: 5px 5px 8px grey;
+    padding: 15px;
+    background-color: rgb(207, 240, 240);
+}
+
+button {
+    cursor: pointer;
+    padding: 10px;
+    color: rgb(77, 226, 226);
+    border-radius: 10%;
+    background-color: rgb(54, 99, 99);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-style: hidden;
+}
+
+.entries input {
+    display: inline-block;
+    width: 180px;
+    height: 4vh;
+    text-align: center;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: indianred;
+    text-shadow: 1px 1px 3px grey;
+    box-shadow: 2px 2px 8px grey;
+    border: transparent;
+    background-color: snow;
+}
+
+input:focus {
+    outline: transparent;
+}
+
+.entries label {
+    display: inline-block;
+    width: 180px;
+    text-align: center;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: 900;
+    color: rgb(160, 154, 66);
+    text-shadow: 1px 1px 3px rgb(190, 190, 190);
+}
+
+.entries div {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.garageData,
+.garageData span,
+.garageData div {
+    border: 1px solid rgb(138, 135, 135);
+}
+
+.garageData {
+    box-shadow: 5px 5px 8px grey;
+    max-height: 30vh;
+    overflow: auto;
+    margin-bottom: 35px;
+}
+
+.labelDiv {
+    background-color: cadetblue;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: chartreuse;
+    text-shadow: 2px 2px 5px grey;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+}
+
+.cars {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    color: darkslategray;
+}
+
+.cars:nth-child(odd) {
+    background-color: rgb(244, 255, 255);
+}
+
+.cars:nth-child(even) {
+    background-color: antiquewhite;
 }

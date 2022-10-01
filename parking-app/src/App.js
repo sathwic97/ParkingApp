@@ -9,6 +9,7 @@ function App() {
   const [numberPlate, setNumberPlate] = useState(" ");
   const [garage, setGarage] = useState([]);
   let date = new Date();
+
   const carEntry = () => {
     if (
       numberPlateInput.current.value !== " " &&
@@ -33,23 +34,26 @@ function App() {
 
   return (
     <div className="App">
-      <div>
-        <span>
-          <label htmlFor="numberPlate">Enter Number Plate</label>
-        </span>
-        <span>
-          <input
-            type="text"
-            minLength={"10"}
-            maxLength={"11"}
-            ref={numberPlateInput}
-            value={numberPlate}
-            onChange={(event) => {
-              let input = event.target.value.toUpperCase();
-              setNumberPlate(input);
-            }}
-          />
-        </span>
+      <h1>Parking Entry</h1>
+      <div className="entries">
+        <div>
+          <span>
+            <label htmlFor="numberPlate">Enter Number Plate</label>
+          </span>
+          <span>
+            <input
+              type="text"
+              minLength={"10"}
+              maxLength={"11"}
+              ref={numberPlateInput}
+              value={numberPlate}
+              onChange={(event) => {
+                let input = event.target.value.toUpperCase();
+                setNumberPlate(input);
+              }}
+            />
+          </span>
+        </div>
         <div>
           <span>
             <label htmlFor="driver">Enter Driver Name</label>
@@ -70,6 +74,7 @@ function App() {
             />
           </span>
         </div>
+
         <div>
           <button
             type="submit"
@@ -81,43 +86,52 @@ function App() {
           </button>
         </div>
       </div>
-      <div className="garageData">
-        <div>
-          <span>
-            <label htmlFor="">Number Plate</label>
-          </span>
-          <span>
-            <label htmlFor="">Driver Name</label>
-          </span>
-          <span>
-            <label htmlFor="">Check-In</label>
-          </span>
-          <span>
-            <label htmlFor="">check-Out</label>
-          </span>
-        </div>
-        {garage.map((item) => {
-          return (
-            <div>
-              <span>
-                <strong>{item.numberPlate}</strong>
-              </span>
-              <span>
-                <strong>{item.driver}</strong>
-              </span>
-              <span>
-                <strong>{item.checkIn} </strong>
-              </span>
-              <span>
-                <strong>{item.checkOut} </strong>
-              </span>
+      <div id="box">
+        <h1>Garage</h1>
 
-              <div>
-                <span></span>
+        <div className="garageData">
+          <div className="labelDiv">
+            <span>
+              <label htmlFor="">Number Plate</label>
+            </span>
+            <span>
+              <label htmlFor="">Driver Name</label>
+            </span>
+            <span>
+              <label htmlFor="">Check-In</label>
+            </span>
+            <span>
+              <label htmlFor="">Check-Out</label>
+            </span>
+          </div>
+
+          {garage.map((item) => {
+            return (
+              <div className="cars">
+                <span>
+                  <p>
+                    <strong>{item.numberPlate}</strong>
+                  </p>
+                </span>
+                <span>
+                  <p>
+                    <strong>{item.driver}</strong>
+                  </p>
+                </span>
+                <span>
+                  <p>
+                    <strong>{item.checkIn} </strong>
+                  </p>
+                </span>
+                <span>
+                  <p>
+                    <strong>{item.checkOut} </strong>
+                  </p>
+                </span>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
   );
